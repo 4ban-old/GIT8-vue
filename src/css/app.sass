@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap')
+
+::-webkit-scrollbar
+  width: 5px
+
+::-webkit-scrollbar-track
+  // -webkit-box-shadow: inset 0 0 20px #232323
+  background-color: #232323
+  border-radius: 0px
+
+::-webkit-scrollbar-thumb
+  border-radius: 0px
+  -webkit-box-shadow: inset 0 0 10px $secondary
+
+.background-gradient
+  background-image: linear-gradient(to bottom right, $gradient-1, $gradient-2)
+
+.rounded-borders
+  border-radius: 4px
+
+.blur
+  opacity: 0.9
+  -webkit-filter: blur(3px)
+  -moz-filter: blur(3px)
+  -o-filter: blur(3px)
+  -ms-filter: blur(3px)
+  filter: blur(3px)
+
+.blur-full
+  opacity: 0.7
+  -webkit-filter: blur(10px) grayscale(90%)
+  -moz-filter: blur(10px) grayscale(90%)
+  -o-filter: blur(10px) grayscale(90%)
+  -ms-filter: blur(10px) grayscale(90%)
+  filter: blur(10px) grayscale(90%)
+
+.link-hover:hover
+  opacity: 0.7
