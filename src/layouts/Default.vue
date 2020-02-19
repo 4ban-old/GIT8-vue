@@ -21,15 +21,15 @@
         <q-btn class="full-width q-mt-xs" color="secondary" :text-color="this.$router.currentRoute.path === '/' ? 'info': 'dark'" icon="ion-notifications" to="/" >
           <q-badge color="negative" class="text-black" floating v-show="newNotifications > 0">{{ newNotifications }}</q-badge>
         </q-btn>
-        <q-btn disable class="full-width q-mt-xs" color="secondary" :text-color="this.$router.currentRoute.path === '/statistics' ? 'info': 'dark'" icon="fas fa-chart-pie" to="/statistics" />
-        <q-btn class="full-width q-mt-xs" color="secondary" :text-color="this.$router.currentRoute.path === '/ch' ? 'info': 'dark'" icon="ion-alert" to="/ch" />
+        <!-- TODO Testing -->
+        <!-- <q-btn class="full-width q-mt-xs" color="secondary" :text-color="this.$router.currentRoute.path === '/statistics' ? 'info': 'dark'" icon="fas fa-chart-pie" to="/statistics" /> -->
+        <!-- <q-btn class="full-width q-mt-xs" color="secondary" :text-color="this.$router.currentRoute.path === '/ch' ? 'info': 'dark'" icon="ion-alert" to="/ch" /> -->
       </div>
       <!-- Footer -->
       <div class="absolute-bottom q-pa-xs">
         <q-separator dark class="q-my-xs"/>
         <!-- <q-btn class="full-width q-mt-xs" color="positive" :text-color="this.$router.currentRoute.path === '/settings' ? 'white': 'dark'" icon="ion-settings" to="/settings" /> -->
         <q-btn class="full-width q-mt-xs" color="secondary" text-color="dark" icon="ion-settings" @click="$helpers.openSettings()" />
-        <q-btn class="full-width q-mt-xs" color="secondary" text-color="dark" icon="fas fa-donate" @click="$helpers.openDonations()" />
         <q-btn outline class="full-width q-mt-xs" color="negative" text-color="negative" icon="ion-exit" @click="logout()" >
           <q-tooltip content-class="bg-negative text-black" content-style="font-size: 16px" :offset="[10, 10]">
             Sign-out
@@ -54,8 +54,7 @@ export default {
   },
   mounted () {
     this.$notifications.notificationService()
-    // TODO uncomment for production
-    // this.i1 = setInterval(() => this.$notifications.notificationService(), 60000)
+    this.i1 = setInterval(() => this.$notifications.notificationService(), 60000)
   },
   beforeDestroy () {
     clearInterval(this.i1)

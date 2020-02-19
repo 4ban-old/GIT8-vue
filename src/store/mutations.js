@@ -10,6 +10,7 @@ export default {
     state.session.notifications = notifications
   },
 
+  // TODO unfinished feature
   [types.UPDATE_SUBSCRIPTIONS] (state, subscriptions) {
     state.session.subscriptions = subscriptions
   },

@@ -33,7 +33,7 @@
     <div v-else class="text-center text-white text-weight-bolder text-h6">
       Amazing! You've read all your notifications.
     </div>
-    <div v-show="notifications.length" class="text-center q-pt-lg">
+    <div v-show="notifications.length && notifications.length >= perPage" class="text-center q-pt-lg">
       <!-- <q-linear-progress dark indeterminate track-color="primary" color="positive" v-if="!notifications.length" /> -->
       <q-btn color="primary" square label="More?" icon="fas fa-chevron-down" @click="$notifications.notificationServiceNext()" class="full-width no-border-radius" />
     </div>
@@ -66,6 +66,9 @@ export default {
     },
     notifications () {
       return this.$store.getters.notifications
+    },
+    perPage () {
+      return this.$store.getters.perPage
     }
   },
   mounted () {
@@ -75,7 +78,9 @@ export default {
   methods: {
     openNotification (id, url) {
       this.$store.commit(types.DELETE_NOTIFICATION, id)
-      this.$helpers.openExternal(url.replace('api.github.com/repos/', 'github.com/'))
+      // TODO: Fix the PR link
+      let u = url.replace('/pulls/', '/pull/')
+      this.$helpers.openExternal(u.replace('api.github.com/repos/', 'github.com/'))
     },
     markRead (notification) {
       this.$notifications.markNotification(notification.id)

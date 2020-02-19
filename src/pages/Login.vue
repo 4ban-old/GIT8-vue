@@ -7,7 +7,7 @@
         </div>
         <div class="row window-height items-center">
           <div class="col text-center ">
-            <img src="@/statics/icons/icon-256x256.png" style="height: 150px; max-width: 150px" />
+            <img src="@/statics/icons/icon-256x256.png" style="height: 256px; max-width: 256px" />
             <div>
               <q-badge outline color="black" transparent>{{ version }}</q-badge>
             </div>

@@ -1,6 +1,7 @@
 import store from '@/store'
 import * as types from '@/store/mutation-types'
 
+// TODO unfinished feature
 export function getSubscriptions () {
   // TODO autopagination
   store.dispatch('getSubscriptions').then(response => {

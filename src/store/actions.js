@@ -98,6 +98,7 @@ export const markAllNotification = ({ commit, state }) => {
   })
 }
 
+// TODO unfinished feature
 export const getSubscriptions = ({ commit, state }) => {
   return new Promise((resolve, reject) => {
     getAxiosClient(state).get('/user/subscriptions').then(response => {

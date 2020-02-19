@@ -2,7 +2,6 @@ import { shell, clipboard, ipcRenderer } from 'electron'
 import { Dialog } from 'quasar'
 import moment from 'moment'
 import Settings from '@/components/Settings.vue'
-import Donations from '@/components/Donations.vue'
 const { app } = require('electron').remote
 import { errorNotifier } from '@/services/errorNotifier'
 import { successNotifier } from '@/services/successNotifier'
@@ -95,22 +94,6 @@ export const toggleSettings = (store) => {
 
 export function openSettings () {
   ipcRenderer.send('open-settings')
-}
-
-export const toggleDonations = (store) => {
-  ipcRenderer.on('toggle-donations', () => {
-    Dialog.create({
-      component: Donations
-      // parent: this,
-    }).onOk(() => {
-    }).onCancel(() => {
-    }).onDismiss(() => {
-    })
-  })
-}
-
-export function openDonations () {
-  ipcRenderer.send('open-donations')
 }
 
 export function showWindow () {

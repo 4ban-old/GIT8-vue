@@ -17,7 +17,6 @@ export default {
       this.$store.dispatch('initApp').then(() => {
         this.$configManager.config()
         this.$helpers.toggleSettings()
-        this.$helpers.toggleDonations()
         githubOauthSuccess(this.$store)
       }, error => {
         // TODO add error notification

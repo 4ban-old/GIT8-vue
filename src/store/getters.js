@@ -30,6 +30,11 @@ export const preferences = state => {
   return state.preferences ? state.preferences : ''
 }
 
+// TODO unfinished feature
 export const subscriptions = state => {
   return state.session.subscriptions ? state.session.subscriptions : []
+}
+
+export const perPage = state => {
+  return state.preferences.perPage ? state.preferences.perPage : 0
 }

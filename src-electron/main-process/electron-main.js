@@ -31,6 +31,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 700,
     height: 500,
+    minWidth: 600,
+    minHeight: 500,
     frame: false,
     show: false,
     resizable: false,
@@ -39,7 +41,7 @@ function createWindow () {
     // useContentSize: true,
     webPreferences: {
       backgroundThrottling: false,
-      // overlayScrollbars: true,
+      overlayScrollbars: true,
       nodeIntegration: true
     }
   })
@@ -115,14 +117,6 @@ app.on('ready', () => {
           repo: 'git8',
           body
         })
-      }
-    },
-    {
-      label: 'Donations',
-      accelerator: process.platform === 'darwin' ? 'Command+d' : 'Ctrl+d',
-      enabled: true,
-      click: () => {
-        mainWindow.webContents.send('toggle-donations')
       }
     },
     { type: 'separator' },
@@ -201,9 +195,6 @@ app.on('browser-window-blur', (event, win) => {
 ipcMain.on('showWindow', () => mainWindow.show())
 ipcMain.on('open-settings', () => {
   mainWindow.webContents.send('toggle-settings')
-})
-ipcMain.on('open-donations', () => {
-  mainWindow.webContents.send('toggle-donations')
 })
 
 // TODO Finish the autostart feature
