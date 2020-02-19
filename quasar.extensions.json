@@ -10,10 +10,10 @@
     "__internal": {
       "dev": {
         "electron": {
-          "iconHash": "0f4cd201c9590bbda3ba51d18e7331ca"
+          "iconHash": "5a5da0c124a0e4c4e45b373f88c32da5"
         },
         "spa": {
-          "iconHash": "0f4cd201c9590bbda3ba51d18e7331ca"
+          "iconHash": "5a5da0c124a0e4c4e45b373f88c32da5"
         }
       },
       "build": {
