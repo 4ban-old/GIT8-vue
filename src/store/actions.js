@@ -3,6 +3,7 @@ import * as axios from 'axios'
 import { ipcRenderer } from 'electron'
 import { configStore } from '@/services/configManager'
 import { enableTheme } from '@/services/themes'
+import { setAutoLaunch } from '@/services/helpers'
 
 const getAxiosClient = state => {
   return axios.create({
@@ -140,7 +141,7 @@ export const setTheme = ({ commit }, theme = 'Dark') => {
 export const setAutostart = ({ commit }, autostart = true) => {
   configStore.set('autostart', autostart)
   commit(types.SET_AUTOSTART, autostart)
-  // TODO apply autostart settings
+  setAutoLaunch(autostart)
 }
 
 export const setSound = ({ commit }, sound = true) => {

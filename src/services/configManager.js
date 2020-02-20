@@ -1,5 +1,6 @@
 import store from '@/store'
 import { enableTheme } from '@/services/themes'
+import { setAutoLaunch } from '@/services/helpers'
 const Store = require('electron-store')
 const fs = require('fs')
 
@@ -36,6 +37,5 @@ export function initConfig () {
 
 export function config () {
   enableTheme(store.getters.preferences.theme)
-  // TODO apply autostart settings
-  // TODO apply sound settings
+  setAutoLaunch(store.getters.preferences.autostart)
 }

@@ -47,23 +47,15 @@
             <div class="col">
               <q-item tag="label" v-ripple>
                 <q-item-section>
-                  <q-item-label>Play sound</q-item-label>
+                  <q-item-label>Participating only</q-item-label>
+                  <q-item-label caption>If enabled, only shows notifications in which the user is directly participating or mentioned</q-item-label>
                 </q-item-section>
-                <q-item-section side >
-                  <q-toggle color="dark" v-model="sound"/>
+                <q-item-section side top>
+                  <q-toggle color="dark" v-model="participating" />
                 </q-item-section>
               </q-item>
             </div>
           </div>
-          <q-item tag="label" v-ripple>
-            <q-item-section>
-              <q-item-label>Participating only</q-item-label>
-              <q-item-label caption>If enabled, only shows notifications in which the user is directly participating or mentioned</q-item-label>
-            </q-item-section>
-            <q-item-section side top>
-              <q-toggle color="dark" v-model="participating" />
-            </q-item-section>
-          </q-item>
           <q-item tag="label" v-ripple>
             <q-item-section>
               <q-item-label>Notifications per page</q-item-label>

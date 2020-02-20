@@ -2,6 +2,7 @@ import { app, BrowserWindow, Menu, shell, Tray, nativeImage, dialog, ipcMain } f
 import { autoUpdater } from 'electron-updater'
 import giterMenu from './electron-menu'
 import { githubOauth } from '../../src/services/auth'
+const AutoLaunch = require('auto-launch')
 const unhandled = require('electron-unhandled')
 const { openNewGitHubIssue, debugInfo } = require('electron-util')
 const path = require('path')
@@ -15,6 +16,12 @@ unhandled({
       body: `\`\`\`\n${error.stack}\n\`\`\`\n\n---\n\n${debugInfo()}`
     })
   }
+})
+
+const autoStart = new AutoLaunch({
+  name: 'GIT8',
+  path: process.execPath.match(/.*?\.app/)[0],
+  isHidden: true
 })
 
 /**
@@ -214,6 +221,8 @@ ipcMain.on('update-icon', (event, arg) => {
   }
 })
 
+ipcMain.on('autoStart-enable', () => autoStart.enable())
+ipcMain.on('autoStart-disable', () => autoStart.disable())
 // Auth
 const authWindowParams = {
   alwaysOnTop: true,

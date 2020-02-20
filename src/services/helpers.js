@@ -112,10 +112,10 @@ export function updateTrayIcon (notificationsLength = 0) {
   }
 }
 
-// export function setAutoLaunch (value) {
-//   if (value) {
-//     ipcRenderer.send('startup-enable')
-//   } else {
-//     ipcRenderer.send('startup-disable')
-//   }
-// }
+export function setAutoLaunch (v) {
+  if (v) {
+    ipcRenderer.send('autoStart-enable')
+  } else {
+    ipcRenderer.send('autoStart-disable')
+  }
+}
