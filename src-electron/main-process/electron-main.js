@@ -45,6 +45,7 @@ function createWindow () {
     resizable: false,
     title: 'git8',
     fullscreenable: false,
+    skipTaskbar: true,
     // useContentSize: true,
     webPreferences: {
       backgroundThrottling: false,
@@ -63,7 +64,9 @@ function createWindow () {
   //     appWindow.hide();
   //   }
   // });
-
+  if (process.platform === 'darwin') {
+    app.dock.hide()
+  }
   const appMenu = giterMenu(app, shell, mainWindow)
   Menu.setApplicationMenu(Menu.buildFromTemplate(appMenu))
 }
@@ -291,7 +294,7 @@ autoUpdater.on('update-available', info => {
   }
   try {
     tray.setImage(
-      nativeImage.createFromPath(iconPath + '/trayUpdateTemplate.png')
+      nativeImage.createFromPath(iconPath + '/trayUpdate.png')
     )
   } catch (e) {
     log.info('setImage() does not work on windows')
