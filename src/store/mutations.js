@@ -46,6 +46,10 @@ export default {
     state.preferences.sound = sound
   },
 
+  [types.SET_NOTIFICATION] (state, notification) {
+    state.preferences.notification = notification
+  },
+
   [types.SET_PARTICIPATING] (state, participating) {
     state.preferences.participating = participating
   },

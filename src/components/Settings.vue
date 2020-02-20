@@ -34,13 +34,13 @@
           <q-item-label header class="text-warning">Notifications</q-item-label>
           <div class="row">
             <div class="col">
-              <q-item tag="label" v-ripple disable>
+              <q-item tag="label" v-ripple>
                 <q-item-section>
                   <q-item-label>Notifications</q-item-label>
                   <q-item-label caption>If disabled, the system notifications will not appear. (i.e. silence mode)</q-item-label>
                 </q-item-section>
                 <q-item-section side >
-                  <q-toggle color="dark" v-model="n"/>
+                  <q-toggle color="dark" v-model="notification"/>
                 </q-item-section>
               </q-item>
             </div>
@@ -88,7 +88,7 @@ export default {
       participating: !!store.getters.preferences.participating,
       autostart: !!store.getters.preferences.autostart,
       sound: !!store.getters.preferences.sound,
-      n: false
+      notification: !!store.getters.preferences.notification
     }
   },
   computed: {
@@ -118,6 +118,7 @@ export default {
       store.dispatch('setPerPage', parseInt(this.perPage))
       store.dispatch('setParticipating', this.participating)
       store.dispatch('setSound', this.sound)
+      store.dispatch('setNotification', this.notification)
       store.dispatch('setAutostart', this.autostart)
       this.$notifications.notificationService()
     },

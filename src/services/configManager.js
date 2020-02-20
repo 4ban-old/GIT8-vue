@@ -14,6 +14,9 @@ const schema = {
   sound: {
     type: 'boolean'
   },
+  notification: {
+    type: 'boolean'
+  },
   participating: {
     type: 'boolean'
   },
@@ -29,6 +32,7 @@ export function initConfig () {
       configStore.set('theme', 'Dark')
       configStore.set('autostart', false)
       configStore.set('sound', true)
+      configStore.set('notification', true)
       configStore.set('participating', false)
       configStore.set('perPage', 30)
     }

@@ -150,6 +150,11 @@ export const setSound = ({ commit }, sound = true) => {
   // TODO apply sound setings
 }
 
+export const setNotification = ({ commit }, notification = true) => {
+  configStore.set('notification', notification)
+  commit(types.SET_NOTIFICATION, notification)
+}
+
 export const setParticipating = ({ commit }, participating = false) => {
   configStore.set('participating', participating)
   commit(types.SET_PARTICIPATING, participating)

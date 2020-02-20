@@ -26,6 +26,7 @@ const state = {
   preferences: {
     theme: configStore.get('theme') || 'Dark',
     sound: configStore.get('sound') || true,
+    notification: configStore.get('notification') || true,
     autostart: configStore.get('autostart') || false,
     participating: configStore.get('participating') || false,
     perPage: configStore.get('perPage') || 30
