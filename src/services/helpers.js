@@ -113,9 +113,11 @@ export function updateTrayIcon (notificationsLength = 0) {
 }
 
 export function setAutoLaunch (v) {
-  if (v) {
-    ipcRenderer.send('autoStart-enable')
-  } else {
-    ipcRenderer.send('autoStart-disable')
+  if (process.platform === 'darwin') {
+    if (v) {
+      ipcRenderer.send('autoStart-enable')
+    } else {
+      ipcRenderer.send('autoStart-disable')
+    }
   }
 }
