@@ -1,6 +1,6 @@
 {
   "name": "git8",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "GitHub notification tool",
   "productName": "GIT8",
   "cordovaId": "org.cordova.quasar.app",

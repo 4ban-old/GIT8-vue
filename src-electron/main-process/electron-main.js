@@ -117,6 +117,12 @@ app.on('ready', () => {
         mainWindow.webContents.send('toggle-settings')
       }
     },
+    {
+      label: 'DevTools',
+      click: () => {
+        mainWindow.webContents.openDevTools()
+      }
+    },
     { type: 'separator' },
     {
       label: 'Report an issue',
@@ -127,6 +133,12 @@ app.on('ready', () => {
           repo: 'git8',
           body
         })
+      }
+    },
+    {
+      label: 'App data',
+      click: () => {
+        shell.openItem(app.getPath('userData'))
       }
     },
     { type: 'separator' },
