@@ -120,7 +120,7 @@ export default {
       store.dispatch('setSound', this.sound)
       store.dispatch('setNotification', this.notification)
       store.dispatch('setAutostart', this.autostart)
-      this.$notifications.notificationService()
+      this.$notifications.notificationService(true)
     },
     onCancelClick () {
       this.hide()

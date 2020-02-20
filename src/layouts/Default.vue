@@ -13,7 +13,7 @@
       <q-separator dark class="q-my-xs"/>
       <!-- Menu -->
       <div>
-        <q-btn outline dense class="full-width q-mt-xs" size="sm" color="info" icon="ion-refresh" @click="$notifications.notificationService()">
+        <q-btn outline dense class="full-width q-mt-xs" size="sm" color="info" icon="ion-refresh" @click="$notifications.notificationService(true)">
           <q-tooltip content-class="bg-secondary text-info" content-style="font-size: 16px" :offset="[10, 10]">
             Refresh notifications
           </q-tooltip>
@@ -53,8 +53,8 @@ export default {
     }
   },
   mounted () {
-    this.$notifications.notificationService()
-    this.i1 = setInterval(() => this.$notifications.notificationService(), 60000)
+    this.$notifications.notificationService(false)
+    this.i1 = setInterval(() => this.$notifications.notificationService(true), 60000)
   },
   beforeDestroy () {
     clearInterval(this.i1)
