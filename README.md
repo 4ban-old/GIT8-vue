@@ -1,4 +1,4 @@
-# GIT8 (WIP)
+# GIT8
 
 GitHub notification tool
 
